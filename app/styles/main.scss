@@ -1,0 +1,260 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/";
+
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "./chartist.css";
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-bottom: 20px;
+    background-color: #EDF0F2;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    background: #535A5E;
+    border-bottom: 1px solid #e5e5e5;
+    
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 10px;
+        color: #fefefe;
+    }
+}
+.btn-primary {
+    background-color: #2C83BD
+}
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+    }
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+    p + h4 {
+        margin-top: 28px;
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+.chart {
+    padding: 0 30px 0 15px;
+}
+
+.ct-chart {
+    position: relative;
+    width: 100%;
+
+    .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
+        fill: #696D75;
+    }
+
+    .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+        fill: #8AC3BF;
+    }
+    .ct-series.ct-series-a .ct-line, .ct-series.ct-series-a .ct-point {
+        stroke: #8AC3BF;
+        stroke-linecap: round;
+        transition: stroke 1.2s linear;
+    }
+
+    .ct-label, .ct-label.ct-horizontal {
+        text-transform: uppercase;
+        font-size: 1rem !important;
+        font-weight: bold;
+        /*margin-left: -10px;*/
+    }
+    .ct-label.ct-vertical {
+        color: rgba(0,0,0,0.2);
+    }
+}
+
+#debtName {
+    position: relative;
+    background: none repeat scroll 0% 0% transparent;
+    font-size: 2em;
+    border-width: 1px;
+    border-style: solid;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: rgb(221, 221, 221);
+    border-left-color: transparent;
+    width: 100%;
+    z-index: 1
+}
+
+.debt-calc, .calc-placeholder {
+    padding-top: 10px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.debt-calc {
+    background: #fbfbfb;
+    border-right: 1px solid #dbdbdb;
+    border-bottom: 1px solid #c8c8c8;
+
+    h2 {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    .col-md-3 {
+        z-index: 1;
+    }
+}
+
+.calcInputs {
+    border-top: 1px solid #ddd;
+    margin: 40px 10px;
+
+    label {
+        text-transform: uppercase;
+        font-size: 0.7em;
+        clear: both;
+        white-space: nowrap;
+        color: #3D5754;
+    }
+
+    .col-md-3 .form-group select {
+        width: 66%;
+        padding: 8px 6px;
+        background: rgba(255,255,255,0.5);
+        border: 1px solid #aaa;
+        padding: 5px;
+    }
+
+    .col-md-3 .form-group input, .calcInputs .col-md-6 .form-group input, .calcInputs .col-md-3 .form-group select {
+        background: rgba(255,255,255,0.5);
+        border: 1px solid #aaa;
+        padding: 5px;
+        width: 100%;
+    }
+}
+
+.calc-placeholder {
+    height: 500px;
+    width: 100%;
+    border: 4px dashed #ddd;
+
+    button {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 50px;
+    }
+}
+
+.paymentInputs {
+
+    .close {
+        z-index: 1;
+        margin-top: 25px;
+    }
+}
+
+#app .row .col-lg-12 .col-lg-6:nth-child(2n+1) {
+  clear: left;
+}
+
+.chart-tooltip {
+    position: absolute;
+    padding: 5px;
+    background: #eee;
+    transition: opacity 0.5s ease;
+    width: 120px;
+
+    text-align: center;
+    font-size: 0.7em;
+
+    strong {
+        text-transform: uppercase;
+    }
+}
+
+.chart-tooltip:before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}  
+
+.chart-tooltip:after {
+  border-left: solid transparent 5px;
+  border-right: solid transparent 5px;
+  border-top: solid #eee 5px;
+  bottom: -5px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -7px;
+  position: absolute;
+  width: 0;
+}
+
+
